@@ -21,3 +21,35 @@ and check box Build project automatically
    Check box: Allow auto-make to ...
    (IntelliJ CE)
 
+More on Developer Tools:
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.devtools
+
+### Third Commit: Spring Boot Actuator
+In order to make use of Actuator, add
+spring-boot-starter-actuator to pom
+
+This will expose /actuator/health by default
+
+To expose /info endpoint, add to
+application.properties file:
+```
+management.endpoints.web.exposure.include=health,info
+management.info.env.enabled=true
+```
+
+/info endpoint is for custom properties,
+in order to publish them, add to
+application.properties file
+(info prefix is mandatory):
+```
+info.app.name=My Super Cool App
+info.app.description=Demo application for Spring Boot
+info.app.version=1.0.0
+```
+To expose all actuator endpoints:
+```
+management.endpoints.web.exposure.include=*
+```
+Full list of actuator endpoints:
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints
+
