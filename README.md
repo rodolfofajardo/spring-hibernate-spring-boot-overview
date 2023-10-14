@@ -53,3 +53,28 @@ management.endpoints.web.exposure.include=*
 Full list of actuator endpoints:
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator.endpoints
 
+### Fourth Commit: Spring Boot Actuator Security
+Add spring-boot-starter-security to pom
+and all endpoints are secured,
+except for /health.
+
+When accessing an endpoint, a sign in
+dialog will appear. Default user is 
+'user', and the password is shown in
+the console.
+
+To customize user and password,
+add the following lines to
+application.properties file:
+
+```
+spring.security.user.name=myuser
+spring.security.user.password=mypassword
+```
+To exclude /health and /info
+```
+management.endpoints.web.exposure.exclude=health,info
+```
+More on Spring Boot Actuator:
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator
+
