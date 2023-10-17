@@ -78,3 +78,13 @@ management.endpoints.web.exposure.exclude=health,info
 More on Spring Boot Actuator:
 https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#actuator
 
+## Fifth Commit: Command Line Execution
+There are two options to run a Spring
+Boot Application:
+```
+$ java -jar mycoolapp.jar
+```
+```
+$ ./mvnw package
+$ ./mvnw spring-boot:run
+```
