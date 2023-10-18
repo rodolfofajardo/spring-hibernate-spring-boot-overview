@@ -88,3 +88,25 @@ $ java -jar mycoolapp.jar
 $ ./mvnw package
 $ ./mvnw spring-boot:run
 ```
+## Sixth Commit: Custom Application Properties
+The standard file for custom configuration
+is src/main/resources/application.properties
+```
+coach.name=Mickey Mouse
+team.name=The Mouse Club
+```
+
+To access such properties in the Spring Boot
+App, the @Value annotation is used.
+```
+@RestController
+public class FunRestController {
+    @Value("${coach.name}")
+    private String coachName;
+
+    @Value("${team.name}")
+    private String teamName;
+... 
+}
+```
+   
